@@ -1,0 +1,123 @@
+index.html
+import * as React from 'react'
+import { View } from 'utopia-api'
+
+export var Playground = ({ style }) => {
+  const [currentPage, setCurrentPage] = React.useState('Home')
+
+  const renderContent = () => {
+    switch (currentPage) {
+      case 'Info':
+        return (
+          <div style={{ padding: '40px', textAlign: 'center' }}>
+            <h1>Utopia Benefits</h1>
+            <p>
+              UTOPIA offers a comprehensive solution designed to revolutionize digital creativity,
+              collaboration, and productivity. One of its main benefits lies in its seamless
+              integration of design and development, allowing users to transition effortlessly
+              between visual concepts and functional code. This eliminates redundancy and saves
+              valuable time for teams working on modern web projects. UTOPIA fosters real-time
+              collaboration, meaning multiple users can work simultaneously on the same project,
+              enhancing communication and speeding up project delivery. With its intuitive interface
+              and powerful design tools, even users with minimal technical experience can contribute
+              meaningfully to the creative process. Another standout benefit is the live preview
+              feature, which provides immediate feedback and enables teams to make fast, informed
+              decisions. UTOPIA also prioritizes scalability, making it suitable for everything from
+              small personal websites to large-scale commercial platforms. It encourages consistency
+              by promoting reusable components, improving maintainability and reducing errors across
+              the codebase. Furthermore, it streamlines deployment, offering built-in tools to
+              publish projects effortlessly. Its integrated asset management system ensures that
+              images, fonts, and styles are easily accessible and organized. Security and privacy
+              are key priorities, with features designed to protect user data and project integrity.
+              UTOPIA supports cross-platform development and embraces modern frameworks, ensuring
+              compatibility and future-proofing your work. By combining creativity, efficiency, and
+              flexibility, UTOPIA empowers individuals and teams to bring their digital visions to
+              life faster and with greater confidence.
+            </p>
+          </div>
+        )
+      case 'Read':
+        return (
+          <div style={{ padding: '40px', textAlign: 'center' }}>
+            <h1>How the Utopia App Works</h1>
+            <p>
+              The UTOPIA app functions as an all-in-one design-to-code environment, enabling users to
+              build and manage web projects with remarkable ease and efficiency. At its core, UTOPIA
+              combines a visual editor with code-level control, so designers and developers can work
+              together in perfect harmony. Users begin by designing their layout in a drag-and-drop
+              environment that mirrors modern UI/UX standards. Every visual change instantly generates
+              clean React-based JSX code in the background, bridging the gap between design and
+              development. UTOPIA also includes real-time collaboration features, allowing team
+              members to contribute simultaneously, leave comments, and see updates live without
+              refreshing the page. The app is built with performance in mind, enabling rapid rendering
+              and minimal lag, even for complex projects. It supports component-based development,
+              encouraging users to create reusable elements that can be shared across multiple
+              screens or applications. UTOPIA’s built-in asset management makes it easy to organize
+              files, manage images, and maintain design consistency. Version control is seamlessly
+              integrated, ensuring that changes can be tracked, reviewed, and rolled back if needed.
+              The app also features intelligent layout tools that guide users in aligning elements and
+              maintaining responsive designs across devices. When ready, projects can be published
+              directly from UTOPIA, removing the need for external deployment services. It also
+              integrates with various APIs and services, supporting dynamic content and enhancing
+              interactivity. Whether you’re prototyping, developing, or refining a final product,
+              UTOPIA provides a powerful and flexible environment that brings digital visions to life
+              faster and more effectively.
+            </p>
+          </div>
+        )
+      default:
+        return (
+          <div style={{ padding: '40px', textAlign: 'center' }}>
+            <h1>Welcome to Home</h1>
+            <p>
+              This is your Utopia project homepage. You can now design, code, and publish seamlessly.
+            </p>
+          </div>
+        )
+    }
+  }
+
+  return (
+    <div
+      style={{
+        fontFamily: 'Arial, sans-serif',
+        height: '100vh',
+        width: '100%',
+        backgroundColor: 'white',
+        ...style,
+      }}
+    >
+      {/* Top Navigation Bar */}
+      <div
+        style={{
+          backgroundColor: '#cccccc',
+          padding: '20px 0',
+          textAlign: 'center',
+        }}
+      >
+        <a href='#' onClick={() => setCurrentPage('Home')} style={navItemStyle}>
+          Home
+        </a>
+        <a href='#' onClick={() => setCurrentPage('Info')} style={navItemStyle}>
+          Info
+        </a>
+        <a href='#' onClick={() => setCurrentPage('Read')} style={navItemStyle}>
+          Read
+        </a>
+      </div>
+      {/* Dynamic Page Content */}
+      {renderContent()}
+    </div>
+  )
+}
+
+// Styling for nav items
+const navItemStyle = {
+  margin: '0 30px',
+  color: 'black',
+  fontSize: '20px',
+  fontWeight: 'bold',
+  textDecoration: 'none',
+  cursor: 'pointer',
+}
+ 
